@@ -6,14 +6,14 @@ const anontityaImage = PlaceHolderImages.find(p => p.id === 'anontitya');
 
 const products = [
   {
-    title: 'thirty',
-    description: 'A platform for curated 30-day creative journeys, fostering discipline and discovery.',
+    title: 'Thirty',
+    description: 'A web and print magazine exploring culture, society, science, philosophy, arts, film, architecture, sustainability, and the in-between moments of life.',
     image: thirtyImage,
     link: '#',
   },
   {
     title: 'Anontitya',
-    description: 'A decentralized identity protocol exploring the future of privacy and personhood online.',
+    description: 'A cultural aesthetics–driven fashion house centered on fabrics, handicrafts, and timeless design rooted in tradition and reinterpretation.',
     image: anontityaImage,
     link: '#',
   },

@@ -4,10 +4,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const aboutImage = PlaceHolderImages.find(p => p.id === 'about-image');
 
 const teamMembers = [
-    { name: 'Alex Chen', role: 'Founder & Creative Director' },
-    { name: 'Jordan Smith', role: 'Lead Technologist' },
-    { name: 'Simone Williams', role: 'Head of Ventures' },
-    { name: 'Kenji Tanaka', role: 'Design Partner' },
+    { name: 'Rohan The Diddy', role: 'CEO' },
+    { name: 'Niloy', role: 'UFO' },
+    { name: 'Kim', role: 'CTO' },
+    { name: 'HR', role: 'Navid' },
 ]
 
 export default function TeamSection() {
