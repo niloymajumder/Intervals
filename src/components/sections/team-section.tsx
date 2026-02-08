@@ -6,7 +6,7 @@ const aboutImage = PlaceHolderImages.find(p => p.id === 'about-image');
 const teamMembers = [
     { name: 'Rohan The Diddy', role: 'CEO' },
     { name: 'Niloy', role: 'UFO' },
-    { name: 'Kim', role: 'CTO' },
+    { name: 'Mustakim', role: 'CTO' },
     { name: 'HR', role: 'Navid' },
 ]
 

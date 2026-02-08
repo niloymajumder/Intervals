@@ -20,7 +20,7 @@ export default function StudioSection() {
               How we bring ideas to life.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Intervals is the mother company, a home where ideas are nurtured into products. We don't rush. We follow a deliberate rhythm of creation and reflection, ensuring each product is thoughtful, purposeful, and built to last. This cycle is at the heart of everything we do.
+              At Intervals, we don't rush. We explore ideas and culture to inspire, sketch and experiment with concepts, build thoughtfully, pause to reflect, and iterate until every product achieves clarity and depth. This cycle is at the heart of everything we do.
             </p>
           </div>
           <div className="opacity-0 animate-fade-in-up animation-delay-200">

@@ -9,10 +9,10 @@ export default function ContactSection() {
             Let's create something together.
           </h2>
           <a
-            href="mailto:hello@intervals.studio"
+            href="mailto:hello@intervals.live"
             className="mt-8 inline-flex items-center text-2xl sm:text-3xl font-medium text-primary hover:text-primary/80 transition-colors"
           >
-            hello@intervals.studio
+            hello@intervals.live
             <ArrowRight className="ml-2 h-7 w-7" />
           </a>
         </div>
