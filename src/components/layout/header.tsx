@@ -6,16 +6,26 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
-const navLinks = [
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+const navLinks: NavLink[] = [
   { href: '#work', label: 'Work' },
   { href: '#philosophy', label: 'Philosophy' },
   { href: '#process', label: 'Process' },
   { href: '#about', label: 'About' },
   { href: '#future', label: 'Future' },
   { href: '#contact', label: 'Contact' },
+  { href: '/careers', label: 'Careers' },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  links?: NavLink[];
+};
+
+export default function Header({ links = navLinks }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,7 +51,7 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-2">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <Button key={link.href} variant="ghost" asChild>
                 <Link href={link.href}>{link.label}</Link>
               </Button>
@@ -60,7 +70,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-sm pb-4">
           <nav className="flex flex-col items-center space-y-2">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <Button key={link.href} variant="ghost" asChild onClick={() => setIsMenuOpen(false)}>
                 <Link href={link.href}>{link.label}</Link>
               </Button>
