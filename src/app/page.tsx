@@ -1,12 +1,3 @@
-import MaintenanceSection from '@/components/sections/maintenance-section';
-
-// MAINTENANCE MODE - Remove maintenance page and uncomment below when ready
-export default function Home() {
-  return <MaintenanceSection />;
-}
-
-/* 
-// ORIGINAL HOME PAGE - Uncomment this when maintenance is complete
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import HeroSection from '@/components/sections/hero-section';
@@ -34,4 +25,4 @@ export default function Home() {
     </div>
   );
 }
-*/
+
