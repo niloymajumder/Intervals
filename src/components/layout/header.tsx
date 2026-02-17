@@ -1,83 +1,73 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { X } from 'lucide-react';
 
-type NavLink = {
-  href: string;
-  label: string;
-};
-
-const navLinks: NavLink[] = [
-  { href: '#work', label: 'Work' },
-  { href: '#philosophy', label: 'Philosophy' },
-  { href: '#process', label: 'Process' },
-  { href: '#about', label: 'About' },
-  { href: '#future', label: 'Future' },
-  { href: '#contact', label: 'Contact' },
+const navLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/ideas', label: 'Ideas' },
   { href: '/careers', label: 'Careers' },
+  { href: '/contact', label: 'Contact' },
 ];
 
-type HeaderProps = {
-  links?: NavLink[];
-};
-
-export default function Header({ links = navLinks }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent",
-    )}>
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="text-xl font-semibold tracking-wider hover:opacity-80 transition-opacity">
-            INTERVALS
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background">
+        <div className="flex items-center justify-between px-6 md:px-10 py-5">
+          <Link href="/" className="flex items-center">
+            <svg className="h-8 w-auto" viewBox="0 0 120 32" fill="currentColor">
+              <text x="0" y="24" className="font-bold text-xl tracking-tight">INTERVALS</text>
+            </svg>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-2">
-            {links.map((link) => (
-              <Button key={link.href} variant="ghost" asChild>
-                <Link href={link.href}>{link.label}</Link>
-              </Button>
-            ))}
-          </nav>
-          
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={toggleMenu}>
-              {isMenuOpen ? <X/> : <Menu/>}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </div>
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="text-sm font-medium tracking-wider hover:opacity-70 transition-opacity"
+          >
+            MENU
+          </button>
         </div>
+      </header>
+
+      {/* Full-screen menu overlay */}
+      <div
+        className={`fixed inset-0 z-[100] bg-background transition-transform duration-500 ease-in-out ${
+          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <div className="flex items-center justify-between px-6 md:px-10 py-5">
+          <Link href="/" onClick={() => setIsMenuOpen(false)}>
+            <svg className="h-8 w-auto" viewBox="0 0 120 32" fill="currentColor">
+              <text x="0" y="24" className="font-bold text-xl tracking-tight">INTERVALS</text>
+            </svg>
+          </Link>
+
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="p-2 hover:opacity-70 transition-opacity"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col items-center justify-center h-[calc(100vh-100px)] gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-4xl md:text-6xl font-bold tracking-tight hover:opacity-70 transition-opacity"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
-      
-      {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm pb-4">
-          <nav className="flex flex-col items-center space-y-2">
-            {links.map((link) => (
-              <Button key={link.href} variant="ghost" asChild onClick={() => setIsMenuOpen(false)}>
-                <Link href={link.href}>{link.label}</Link>
-              </Button>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
+    </>
   );
 }
