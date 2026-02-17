@@ -2,21 +2,51 @@
   "placeholderImages": [
     {
       "id": "thirty",
-      "description": "A person writing in a journal with a calendar in the background.",
-      "imageUrl": "https://i.pinimg.com/736x/53/2b/91/532b91030637d517ef48e824c8262d16.jpg",
-      "imageHint": "creative journal"
+      "description": "Editorial desk with magazine layouts and notes.",
+      "imageUrl": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "editorial desk"
     },
     {
       "id": "anontitya",
-      "description": "Abstract visualization of a digital network or identity.",
-      "imageUrl": "https://i.pinimg.com/736x/74/ca/85/74ca85642d6c7ea531ce29cef0389d44.jpg",
-      "imageHint": "digital identity"
+      "description": "Close-up of textile textures and craft.",
+      "imageUrl": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "textile craft"
     },
     {
       "id": "about-image",
       "description": "A modern design studio office.",
       "imageUrl": "https://images.unsplash.com/photo-1594235046782-8ee6fa676300?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVzaWduJTIwb2ZmaWNlfGVufDB8fHx8MTc3MDU0MDQ1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "design office"
+    },
+    {
+      "id": "hero-minimal",
+      "description": "Minimal architectural facade in soft light.",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "minimal architecture"
+    },
+    {
+      "id": "hero-signal",
+      "description": "Abstract glass panels with lime accents.",
+      "imageUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "abstract glass"
+    },
+    {
+      "id": "hero-atelier",
+      "description": "Creative team working with materials and sketches.",
+      "imageUrl": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "creative studio"
+    },
+    {
+      "id": "studio-space",
+      "description": "Minimal workspace with warm light and tools.",
+      "imageUrl": "https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "workspace tools"
+    },
+    {
+      "id": "future-lab",
+      "description": "Soft-focus technology lab with blue glow.",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1400&q=80",
+      "imageHint": "tech lab"
     }
   ]
 }

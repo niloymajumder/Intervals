@@ -1,20 +1,41 @@
 import React from 'react';
-import { Code } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const futureImage = PlaceHolderImages.find(p => p.id === 'future-lab');
 
 export default function FutureSection() {
   return (
     <section id="future" className="py-24 sm:py-32 bg-background">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="relative text-center max-w-3xl mx-auto opacity-0 animate-fade-in-up animation-delay-200">
-           <div className="flex items-center justify-center h-16 w-16 rounded-full bg-card mx-auto mb-8">
-              <Code className="h-8 w-8 text-muted-foreground" />
-           </div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline">
-            Future Speculation
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
-            We are quietly experimenting with new technologies. Our next interval involves exploring how software can create calm, focus, and long-term perspective in a world of digital noise. Stay tuned.
-          </p>
+      <div className="container mx-auto px-6 md:px-10">
+        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Future Lab</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl font-headline">
+              Speculative systems for a calmer digital world.
+            </h2>
+            <p className="mt-6 text-lg text-muted-foreground">
+              We are experimenting with software that removes friction, restores attention, and helps teams build in deliberate cycles. The lab publishes quarterly notes and early prototypes.
+            </p>
+            <a href="#contact" className="mt-6 inline-flex items-center text-sm uppercase tracking-[0.2em]">
+              Join the lab briefings <ArrowUpRight className="ml-2 h-4 w-4" />
+            </a>
+          </div>
+          <div className="relative">
+            <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-accent/30 blur-3xl animate-float-slow" />
+            <div className="relative aspect-[5/4] overflow-hidden rounded-3xl border border-foreground/10 bg-card">
+              {futureImage && (
+                <Image
+                  src={futureImage.imageUrl}
+                  alt={futureImage.description}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={futureImage.imageHint}
+                />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

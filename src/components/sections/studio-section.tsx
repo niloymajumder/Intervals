@@ -1,48 +1,110 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Zap, Pause, CheckCircle, Repeat } from 'lucide-react';
+"use client";
 
-const processSteps = [
-  { icon: <Zap className="size-6" />, name: 'Build' },
-  { icon: <Pause className="size-6" />, name: 'Pause' },
-  { icon: <CheckCircle className="size-6" />, name: 'Refine' },
-  { icon: <Repeat className="size-6" />, name: 'Repeat' },
+import Link from 'next/link';
+
+const ideas = [
+  {
+    category: 'TECHNOLOGY',
+    type: 'ARTICLE',
+    title: 'The Future of Building: Why Venture Studios Matter',
+    href: '/ideas/venture-studios',
+    number: '01',
+  },
+  {
+    category: 'SUSTAINABILITY', 
+    type: 'ARTICLE',
+    title: 'Investing in Climate Tech: A Framework for Impact',
+    href: '/ideas/climate-tech',
+    number: '02',
+  },
+  {
+    category: 'HEALTH',
+    type: 'NEWS',
+    title: 'Announcing Our Health Innovation Fund',
+    href: '/ideas/health-fund',
+    number: '03',
+  },
 ];
 
 export default function StudioSection() {
   return (
-    <section id="process" className="py-24 sm:py-32 bg-background">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="opacity-0 animate-fade-in-up">
-            <p className="font-semibold text-primary">Our Process</p>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline mt-2">
-              How we bring ideas to life.
+    <section className="py-32 md:py-48 relative overflow-hidden">
+      {/* Abstract background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large diagonal line */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/4 -left-20 w-[150%] h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent rotate-[15deg]" />
+          <div className="absolute top-1/3 -left-20 w-[150%] h-px bg-gradient-to-r from-transparent via-foreground/5 to-transparent rotate-[15deg]" />
+        </div>
+        
+        {/* Floating shapes */}
+        <div className="absolute top-20 right-20 w-32 h-32 border border-foreground/10 rounded-full" />
+        <div className="absolute bottom-32 left-32 w-4 h-4 bg-foreground/20" />
+        <div className="absolute top-1/2 right-1/4 w-2 h-20 bg-foreground/10" />
+      </div>
+
+      <div className="px-6 md:px-10 relative z-10">
+        <div className="grid md:grid-cols-2 gap-16 mb-24">
+          <div className="relative">
+            {/* Decorative bracket */}
+            <div className="absolute -left-8 top-0 h-full w-px bg-gradient-to-b from-foreground/50 via-foreground/20 to-transparent" />
+            <div className="absolute -left-8 top-0 w-4 h-px bg-foreground/50" />
+            
+            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[0.95] tracking-tight">
+              BUILDING A<br />
+              <span className="text-outline">FUTURE</span><br />
+              POSITIVE
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              At Intervals, we don't rush. We explore ideas and culture to inspire, sketch and experiment with concepts, build thoughtfully, pause to reflect, and iterate until every product achieves clarity and depth. This cycle is at the heart of everything we do.
+          </div>
+          <div className="flex flex-col justify-end">
+            <p className="text-muted-foreground text-lg mb-8 max-w-md">
+              Explore the ideas, essays, and insights that shape how we think and invest in the world we want to create.
             </p>
+            <Link 
+              href="/ideas" 
+              className="group inline-flex items-center gap-4 text-sm font-medium tracking-wide w-fit"
+            >
+              <span className="border-b border-foreground pb-1">EXPLORE OUR STORIES</span>
+              <span className="w-8 h-8 border border-foreground flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-colors">
+                →
+              </span>
+            </Link>
           </div>
-          <div className="opacity-0 animate-fade-in-up animation-delay-200">
-            <div className="bg-card rounded-lg p-8">
-                <h3 className="text-center font-medium mb-8">Our Creative Process</h3>
-                <div className="flex items-center justify-between">
-                {processSteps.map((step, index) => (
-                    <React.Fragment key={step.name}>
-                    <div className="flex flex-col items-center text-center w-20">
-                        <div className="bg-secondary rounded-full p-4 mb-2">
-                        {step.icon}
-                        </div>
-                        <span className="font-medium text-sm">{step.name}</span>
-                    </div>
-                    {index < processSteps.length - 1 && (
-                        <ArrowRight className="size-6 text-muted-foreground mx-auto flex-1 hidden sm:block" />
-                    )}
-                    </React.Fragment>
-                ))}
+        </div>
+
+        {/* Ideas Grid - Abstract cards */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {ideas.map((idea, index) => (
+            <Link 
+              key={idea.title}
+              href={idea.href}
+              className="group relative"
+            >
+              {/* Card */}
+              <div className="relative border border-foreground/10 p-8 pt-16 hover:border-foreground/30 transition-colors min-h-[280px] flex flex-col">
+                {/* Large number watermark */}
+                <span className="absolute top-4 right-6 text-7xl font-bold text-foreground/5 group-hover:text-foreground/10 transition-colors">
+                  {idea.number}
+                </span>
+                
+                {/* Category tags */}
+                <div className="flex gap-4 mb-auto relative z-10">
+                  <span className="text-xs text-muted-foreground px-2 py-1 border border-foreground/10">
+                    {idea.category}
+                  </span>
+                  <span className="text-xs text-muted-foreground">{idea.type}</span>
                 </div>
-            </div>
-          </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-semibold relative z-10 mt-8 group-hover:translate-x-2 transition-transform">
+                  {idea.title}
+                </h3>
+                
+                {/* Bottom accent */}
+                <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-px bg-foreground transition-all duration-500" />
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
