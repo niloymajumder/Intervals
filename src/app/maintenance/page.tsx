@@ -7,7 +7,7 @@ export default function MaintenancePage() {
       <Script
         src="https://cloud.umami.is/script.js"
         data-website-id="8fd43d7e-8063-489b-9f3a-2314829acc53"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
       <MaintenanceSection />
     </>
