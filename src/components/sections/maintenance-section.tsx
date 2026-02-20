@@ -33,17 +33,21 @@ export default function MaintenanceSection() {
             Site Under Maintenance
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            We&apos;re performing a short scheduled update to improve performance and reliability.
-            We&apos;ll be back online shortly.
+            We&apos;re performing a short scheduled update to improve
+            performance and reliability. We&apos;ll be back online shortly.
           </p>
 
           <div className="mx-auto mt-10 grid max-w-xl gap-4 text-left sm:grid-cols-2">
             <div className="rounded-2xl border border-border bg-background/70 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Status</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                Status
+              </p>
               <p className="mt-2 font-semibold">Maintenance in progress</p>
             </div>
             <div className="rounded-2xl border border-border bg-background/70 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Expected</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                Expected
+              </p>
               <p className="mt-2 font-semibold">Back shortly</p>
             </div>
           </div>
@@ -52,7 +56,6 @@ export default function MaintenanceSection() {
             <p>Thank you for your patience.</p>
             <p className="mt-1">— Intervals Team</p>
           </div>
-        </div>
         </section>
       </div>
     </div>
