@@ -3,22 +3,22 @@ import Footer from '@/components/layout/footer';
 
 const team = [
   {
-    name: 'Alex Chen',
+    name: 'Shahriar Rohan',
     role: 'FOUNDER & MANAGING PARTNER',
     bio: 'Alex founded Intervals with a vision to build companies that matter. Previously led product at a Fortune 500 technology company.',
   },
   {
-    name: 'Sarah Kim',
+    name: 'Niloy Majumder',
     role: 'PARTNER',
     bio: 'Sarah leads our health and wellness investments. Former healthcare executive with 15 years of industry experience.',
   },
   {
-    name: 'James Rivera',
+    name: 'Mustakim Mohsin',
     role: 'PARTNER',
     bio: 'James focuses on sustainability and climate tech. Previously founded two successful cleantech startups.',
   },
   {
-    name: 'Maya Patel',
+    name: 'Navid',
     role: 'PRINCIPAL',
     bio: 'Maya supports portfolio companies with go-to-market strategy. Background in product management and venture capital.',
   },
