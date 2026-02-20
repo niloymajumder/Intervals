@@ -52,7 +52,6 @@ export default function MaintenanceSection() {
             <p>Thank you for your patience.</p>
             <p className="mt-1">— Intervals Team</p>
           </div>
-        </div>
         </section>
       </div>
     </div>
